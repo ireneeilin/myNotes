@@ -48,8 +48,7 @@
 
 1.创建SSH Key（先于用户主目录下是否有.ssh文件夹且下有.id_rsa和.id_rsa.pub俩文件，若有则不必进行此步）
 
-    $ shh-keygen -t rsa -C "youremail@example.com"
-    
+    $ shh-keygen -t rsa -C "youremail@example.com"    
 
 使用该命令生成密钥，一直按回车则以默认生成。.id_rsa.pub为公钥。
 
