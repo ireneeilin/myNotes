@@ -111,8 +111,8 @@ Git用Fast forward模式时，删除分支后，会丢到分支信息。要强�
 
 5.分支强制删除
 
-    $ git branch -D branch_name
-    
+    $ git branch -D branch_name
+    
 6.多人协作
 
 查看远程库信息可用`git remote [-v]`，`-v`参数表示显示更详细的信息。可以用`git push origin branch_name`向远程库推送指定分支。
