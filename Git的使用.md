@@ -39,7 +39,7 @@
 
     $ git checkout -- file
     $ git reset HEAD file
-       
+    
 但是却有不同。使用`git checkout`可分为两种情况，若未使用`git add`命令，则该撤销操作将版本退为修改前原版本；反之，已添加至暂存区后又进行了修改，则该撤销操作将版本退为添加至暂存区的版本；也可将其粗略认为撤销工作区的修改。使用`git reset`命令则将撤销放在暂存区的修改，回到工作区是版本。
 ###删除文件
 `rm file`表示将版本库的文件删除，此时工作区与版本库将不一致，有两个选择：1.使用`git rm file`命令并用`git commit`提交，确定删除此文件；2.误删了该文件，可以使用上文提及的`git checkout`命令撤销。若是真想删除该文件，可直接使用`git rm file`命令后提交。
@@ -55,3 +55,20 @@
 2.注册Github或者bitBucket账号，将公钥复制到账号的ssh key下。
 
 *这种做法很不方便，通过HTTP授权的方式即在clone的时候直接输入账号密码就行了*
+
+添加远程库：
+
+1.在Github上创建一个与本地同名的repository，后使用命令
+
+    $ git remote add origin git@github.com:your_name/repository_name.git
+    
+将此远程库与本地仓库关联。`origin`是默认的远程仓库名，也可进行更改。
+
+2.把本地库的东西推送到远程库
+
+    $ git push -u origin master
+    
+用`git push`命令实际上是把当前分支`master`推送到远程。由于远程库是空的，我们第一次推送`master`分支时，加上了`-u`参数，Git不但会把本地的`master`分支内容推送的远程新的`master`分支，还会把本地的`master`分支和远程的`master`分支关联起来，在以后的推送或者拉取时就可以简化命令。
+
+    $ git push origin master
+    
